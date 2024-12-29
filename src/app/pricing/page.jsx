@@ -2,12 +2,9 @@ import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Gradient, GradientBackground } from '@/components/gradient'
-import { Link } from '@/components/link'
-import { LogoCloud } from '@/components/logo-cloud'
 import { Navbar } from '@/components/navbar'
-import { Heading, Lead, Subheading } from '@/components/text'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import AcuityScheduler from "@/components/AcuityScheduler";
+import { Heading, Subheading } from '@/components/text'
+import { Menu, MenuButton } from '@headlessui/react'
 
 import {
   CheckIcon,
@@ -17,95 +14,36 @@ import {
 
 export const metadata = {
   title: 'Pricing',
-  description:
-    'Customers around the Bay Area trust DNA Direct',
+  description: 'Customers around the Bay Area trust DNA Direct',
 }
 
 const tiers = [
   {
-    name: 'Starter',
-    slug: 'starter',
-    description: 'Everything you need to start selling.',
-    priceMonthly: 99,
+    name: 'Legal DNA Testing',
+    slug: 'dna-test',
+    description:
+      'Legal DNA paternity testing, also referred to as chain-of-custody testing, offers results that can serve as evidence of a relationship for matters such as child support, custody battles, immigration cases, birth certificate issues, Social Security matters, and other legal purposes. EZ Mobile DNA simplifies the on-site testing requirements to assist you in obtaining precise answers and progressing forward efficiently.',
+    priceMonthly: 425,
     href: '#',
-    highlights: [
-      { description: 'Up to 3 team members' },
-      { description: 'Up to 5 deal progress boards' },
-      { description: 'Source leads from select platforms' },
-      { description: 'RadiantAI integrations', disabled: true },
-      { description: 'Competitor analysis', disabled: true },
-    ],
-    features: [
-      { section: 'Features', name: 'Accounts', value: 3 },
-      { section: 'Features', name: 'Deal progress boards', value: 5 },
-      { section: 'Features', name: 'Sourcing platforms', value: 'Select' },
-      { section: 'Features', name: 'Contacts', value: 100 },
-      { section: 'Features', name: 'AI assisted outreach', value: false },
-      { section: 'Analysis', name: 'Competitor analysis', value: false },
-      { section: 'Analysis', name: 'Dashboard reporting', value: false },
-      { section: 'Analysis', name: 'Community insights', value: false },
-      { section: 'Analysis', name: 'Performance analysis', value: false },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: false },
-      { section: 'Support', name: 'Dedicated account manager', value: false },
-    ],
   },
   {
-    name: 'Growth',
+    name: 'Gender Reveal',
     slug: 'growth',
-    description: 'All the extras for your growing team.',
-    priceMonthly: 149,
+    description:
+      "Our company specializes in providing accurate gender results for pregnant women through a simple and convenient blood test.  With our advanced technology and expertise, we can determine the gender of your baby with high accuracy, giving you and your family an early glimpse into your little one's gender.  \n\nOur process is non-invasive and can be done as early as 9 weeks into pregnancy, providing you with peace of mind and helping you plan for the exciting journey ahead.  \n\nTrust us to deliver reliable gender results and celebrate this special moment in your pregnancy journey.",
+    priceMonthly: 275,
     href: '#',
-    highlights: [
-      { description: 'Up to 10 team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 50 verified platforms' },
-      { description: 'RadiantAI integrations' },
-      { description: '5 competitor analyses per month' },
-    ],
-    features: [
-      { section: 'Features', name: 'Accounts', value: 10 },
-      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
-      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
-      { section: 'Features', name: 'Contacts', value: 1000 },
-      { section: 'Features', name: 'AI assisted outreach', value: true },
-      { section: 'Analysis', name: 'Competitor analysis', value: '5 / month' },
-      { section: 'Analysis', name: 'Dashboard reporting', value: true },
-      { section: 'Analysis', name: 'Community insights', value: true },
-      { section: 'Analysis', name: 'Performance analysis', value: true },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: true },
-      { section: 'Support', name: 'Dedicated account manager', value: false },
-    ],
   },
   {
-    name: 'Enterprise',
-    slug: 'enterprise',
-    description: 'Added flexibility to close deals at scale.',
-    priceMonthly: 299,
+    name: 'Rapid Urine Test',
+    slug: 'urine-test',
+    description: 'Test yourself',
+    priceMonthly: 70,
     href: '#',
-    highlights: [
-      { description: 'Unlimited active team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 100 verified platforms' },
-      { description: 'RadiantAI integrations' },
-      { description: 'Unlimited competitor analyses' },
-    ],
-    features: [
-      { section: 'Features', name: 'Accounts', value: 'Unlimited' },
-      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
-      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
-      { section: 'Features', name: 'Contacts', value: 'Unlimited' },
-      { section: 'Features', name: 'AI assisted outreach', value: true },
-      { section: 'Analysis', name: 'Competitor analysis', value: 'Unlimited' },
-      { section: 'Analysis', name: 'Dashboard reporting', value: true },
-      { section: 'Analysis', name: 'Community insights', value: true },
-      { section: 'Analysis', name: 'Performance analysis', value: true },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: true },
-      { section: 'Support', name: 'Dedicated account manager', value: true },
-    ],
   },
+  {
+    name: 'Home DNA kits'
+  }
 ]
 
 function Header() {
@@ -149,21 +87,17 @@ function PricingCard({ tier }) {
             </div>
             <div className="text-sm/5 text-gray-950/75">
               <p>USD</p>
-              <p>per month</p>
             </div>
           </div>
           <div className="mt-8">
-            <Button href={'./appointments'}>Start a free trial</Button>
+            <Button href={'./appointments'}>Go to Booking</Button>
           </div>
           <div className="mt-8">
-            <h3 className="text-sm/6 font-medium text-gray-950">
-              Start selling with:
-            </h3>
-            <ul className="mt-3 space-y-3">
+            {/* <ul className="mt-3 space-y-3">
               {tier.highlights.map((props, featureIndex) => (
                 <FeatureItem key={featureIndex} {...props} />
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
