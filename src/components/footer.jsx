@@ -1,10 +1,12 @@
-import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
+import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 import { Button } from './button'
 import { Container } from './container'
 import { Gradient } from './gradient'
 import { Link } from './link'
 import { Logo } from './logo'
 import { Subheading } from './text'
+import Image from 'next/image'
+
 
 function CallToAction() {
   return (
@@ -12,14 +14,11 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to dive in?
-          <br />
-          Start your free trial today.
+          Request a test today.
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
-        Get the cheat codes for selling and unlock your team&apos;s revenue
-        potential.
+        Schedule an appointment and select your test.
       </p>
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href="#">
@@ -148,7 +147,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Radiant Inc.
+      &copy; {new Date().getFullYear()} Formless Technologies.
     </div>
   )
 }
@@ -164,12 +163,20 @@ export function Footer() {
             <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
-                  <PlusGridItem className="pt-6 lg:pb-6">
-                    <Logo className="h-9" />
-                  </PlusGridItem>
+                <PlusGridItem className="py-3">
+              <Link href="/" title="Home">
+                <Image
+                  src="/logo/DNA-Logo.png"
+                  alt="Bay DNA Logo"
+                  className="h-14"
+                  width={70}
+                  height={60}
+                />{' '}
+              </Link>
+            </PlusGridItem>
                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
-                  <Sitemap />
+                  {/* <Sitemap /> */}
                 </div>
               </div>
             </PlusGridRow>
@@ -181,7 +188,7 @@ export function Footer() {
               </div>
               <div className="flex">
                 <PlusGridItem className="flex items-center gap-8 py-3">
-                  <SocialLinks />
+                  {/* <SocialLinks /> */}
                 </PlusGridItem>
               </div>
             </PlusGridRow>

@@ -7,6 +7,8 @@ import { LogoCloud } from '@/components/logo-cloud'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import AcuityScheduler from "@/components/AcuityScheduler";
+
 import {
   CheckIcon,
   ChevronUpDownIcon,
@@ -16,7 +18,7 @@ import {
 export const metadata = {
   title: 'Pricing',
   description:
-    'Companies all over the world have closed millions of deals with Radiant. Sign up today and start selling smarter.',
+    'Customers around the Bay Area trust DNA Direct',
 }
 
 const tiers = [
@@ -109,11 +111,11 @@ const tiers = [
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Pricing that grows with your team size.</Heading>
-      <Lead className="mt-6 max-w-3xl">
+      <Heading as="h1">Pricing that works for you</Heading>
+      {/* <Lead className="mt-6 max-w-3xl">
         Companies all over the world have closed millions of deals with Radiant.
         Sign up today and start selling smarter.
-      </Lead>
+      </Lead> */}
     </Container>
   )
 }
@@ -128,7 +130,7 @@ function PricingCards() {
             <PricingCard key={tierIndex} tier={tier} />
           ))}
         </div>
-        <LogoCloud className="mt-24" />
+        {/* <LogoCloud className="mt-24" /> */}
       </Container>
     </div>
   )
@@ -151,7 +153,7 @@ function PricingCard({ tier }) {
             </div>
           </div>
           <div className="mt-8">
-            <Button href={tier.href}>Start a free trial</Button>
+            <Button href={'./appointments'}>Start a free trial</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
@@ -211,7 +213,7 @@ function PricingTable({ selectedTier }) {
                     {selectedTier.name}
                     <ChevronUpDownIcon className="size-4 fill-slate-900" />
                   </MenuButton>
-                  <MenuItems
+                  {/* <MenuItems
                     anchor="bottom start"
                     className="min-w-[--button-width] rounded-lg bg-white p-1 shadow-lg ring-1 ring-gray-200 [--anchor-gap:6px] [--anchor-offset:-4px] [--anchor-padding:10px]"
                   >
@@ -230,7 +232,7 @@ function PricingTable({ selectedTier }) {
                         </Link>
                       </MenuItem>
                     ))}
-                  </MenuItems>
+                  </MenuItems> */}
                 </Menu>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
                   <ChevronUpDownIcon className="size-4 fill-slate-900" />
@@ -492,9 +494,9 @@ export default function Pricing({ searchParams }) {
       </Container>
       <Header />
       <PricingCards />
-      <PricingTable selectedTier={tier} />
-      <Testimonial />
-      <FrequentlyAskedQuestions />
+      {/* <PricingTable selectedTier={tier} /> */}
+      {/* <Testimonial /> */}
+      {/* <FrequentlyAskedQuestions /> */}
       <Footer />
     </main>
   )
