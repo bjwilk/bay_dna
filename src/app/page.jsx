@@ -19,7 +19,7 @@ import AccordionServerComponent from '@/components/AccordionServerComponent'
 
 export const metadata = {
   description:
-    'Radiant helps you sell more by revealing sensitive information about your customers.',
+    'DNA Direct comes to you for your dna needs',
 }
 
 function Hero() {
