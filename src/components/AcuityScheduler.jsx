@@ -19,7 +19,7 @@ const AcuityScheduler = () => {
   return (
     <div>
       <iframe
-        src="https://app.acuityscheduling.com/schedule.php?owner=34323945&ref=embedded_csp"
+        src="https://app.acuityscheduling.com/schedule.php?owner=34741810"
         title="Schedule Appointment"
         width="100%"
         height="800"
