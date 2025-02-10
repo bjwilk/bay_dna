@@ -21,8 +21,8 @@ function CallToAction() {
         Schedule an appointment and select your test.
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="#">
-          Get started
+        <Button className="w-full sm:w-auto" href={'./appointments'}>
+          Go to Booking
         </Button>
       </div>
     </div>
